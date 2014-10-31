@@ -612,8 +612,8 @@ static int oregon_scientific_v2_1_parser(uint8_t bb[BITBUF_ROWS][BITBUF_COLS]) {
 		}
 		return 1;
 	} else if (num_valid_v2_bits > 16) {
-fprintf(stderr, "%d bit message received from unrecognized Oregon Scientific v2.1 sensor with device ID %x.\n", num_valid_v2_bits, sensor_id);
-fprintf(stderr, "Message: "); for (i=0 ; i<20 ; i++) fprintf(stderr, "%02x ", msg[i]); fprintf(stderr,"\n\n");
+//fprintf(stderr, "%d bit message received from unrecognized Oregon Scientific v2.1 sensor with device ID %x.\n", num_valid_v2_bits, sensor_id);
+//fprintf(stderr, "Message: "); for (i=0 ; i<20 ; i++) fprintf(stderr, "%02x ", msg[i]); fprintf(stderr,"\n\n");
     } else {
 //fprintf(stderr, "\nPossible Oregon Scientific v2.1 message, but sync nibble wasn't found\n"); fprintf(stderr, "Raw Data: "); for (i=0 ; i<BITBUF_COLS ; i++) fprintf(stderr, "%02x ", bb[0][i]); fprintf(stderr,"\n\n");    
     } 

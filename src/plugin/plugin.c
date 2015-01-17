@@ -70,7 +70,7 @@ VISIBLE plugin_array *pm_discover_plugins( const char* dirname, plugin_array *pl
     {
         char *name = direntry->d_name;
         // TODO: have a look at expected extensions for other platforms 
-        if (!name || ( direntry->d_type != DT_REG && direntry->d_type != DT_LNK ) || ! strstr( name, ".so" )  )
+        if (!name || ( direntry->d_type != DT_REG && direntry->d_type != DT_LNK ) || (! strstr( name, ".so" ) && ! strstr( name, ".dylib" )) )
         {
             /* direntry has no name or is not a regular file */
             continue;

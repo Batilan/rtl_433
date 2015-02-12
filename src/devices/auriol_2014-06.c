@@ -85,9 +85,7 @@ int auriol_2014_06_callback(uint8_t bb[BITBUF_ROWS][BITBUF_COLS]) {
         tm_info = localtime(&timer);
         strftime(buffer, 25, "%Y-%m-%d %H:%M:%S", tm_info);
 
-        //fprintf(stderr, "temp: %2.1f, hygro: %d, channel: %d, time = %s\n", temp, hygro, channel, buffer);
-//        fprintf(stderr, "temp: %2.1f, hygro: %d, channel: %d, time = %s\n", temp, hygro, channel, buffer);
-        fprintf(stderr, "temp: %2.1f, hygro: %d, channel: %d, time = %s --\n", temp, hygro, channel, buffer);
+        fprintf(stderr, "temp: %2.1f, hygro: %d, channel: %d, time = %s\n", temp, hygro, channel, buffer);
         snprintf(out_buffer, MAX_OUTPUT_BUFFER,
             " {"
             " \"sensor-event\": { \"brand\": \"auriol\", \"model\": \"Z1234\", \"channel\": %d, \"epoch\": %ld },"
@@ -95,7 +93,7 @@ int auriol_2014_06_callback(uint8_t bb[BITBUF_ROWS][BITBUF_COLS]) {
             " }\n",
             channel, timer, temp, hygro );
 
-        fprintf(stderr, out_buffer);
+        printf(out_buffer);
 
         return 1;
     }
